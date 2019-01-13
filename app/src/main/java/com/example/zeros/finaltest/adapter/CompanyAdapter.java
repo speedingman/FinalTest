@@ -21,7 +21,7 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
     LayoutInflater inf;
 
     public CompanyAdapter(Context context, List<Company> list){
-        super(context, R.layout.company_list_item);
+        super(context, R.layout.company_list_item, list);
 
         mContext = context;
         mList = list;
@@ -50,7 +50,9 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
 
         nameCompany.setText(data.getName());
 
-        companyId.setText(data.getId());
+
+
+        companyId.setText(String.valueOf(data.getId()));
 
 
 

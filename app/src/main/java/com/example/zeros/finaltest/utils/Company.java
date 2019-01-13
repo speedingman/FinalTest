@@ -19,7 +19,7 @@ public class Company implements Serializable {
             try {
                 company.setId(comJson.getInt("id"));
                 company.setName(comJson.getString("name"));
-                company.setLogo("logo");
+                company.setLogo(comJson.getString("logo"));
 
             } catch (JSONException e) {
                 e.printStackTrace();

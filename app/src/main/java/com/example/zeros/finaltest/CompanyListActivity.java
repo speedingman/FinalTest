@@ -1,6 +1,7 @@
 package com.example.zeros.finaltest;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.example.zeros.finaltest.adapter.CompanyAdapter;
@@ -54,6 +55,7 @@ public class CompanyListActivity extends BaseActivity {
             @Override
             public void onResponse(JSONObject json) {
 
+                Log.d("회사목록", json.toString());
 
 
                 try {
@@ -73,7 +75,13 @@ public class CompanyListActivity extends BaseActivity {
 
                         }
 
-                        mAdapter.notifyDataSetChanged();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mAdapter.notifyDataSetChanged();
+                            }
+                        });
+
 
                     }
 
